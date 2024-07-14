@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Uploader</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Upload SVG File</h1>
+    <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".svg" required />
+      <button type="submit">Upload</button>
+    </form>
+    <% if (result) { %>
+    <div id="result">
+      <h2>Processed SVG:</h2>
+      <textarea id="output"><%= result %></textarea>
+    </div>
+    <% } %>
+  </div>
+</body>
+</html>
